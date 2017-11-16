@@ -1,0 +1,23 @@
+1. Member is a const reference. Member is of class type that has no default constructor . Member is a top level const pointer. 
+2. That member functions declared as const are allowed to modify them. 
+3.  An inline namespace is a namespace that is implicitly used in the declaration context. 
+	namespace a {
+   namespace b {
+      ...
+   }
+   using namespace b;
+}
+
+namespace a {
+   inline namespace b {
+      ...
+   }
+}
+
+4. 
+	1. Try to find regular function that perfectely matches call. 
+	2. Try to find template function that can be instantiated to perfectely match call 
+	3. Try to find regular function that is unique best match with implicit conversions. 
+
+5. vector<int> v1 {2,3} is vector with 2 ints 2 and 3. Calls constructor taking std::initializer_list<T>  
+   vector<int> v2 (2,3); is a vector with 2 ints 3 and 3. Calls constructor taking size_type count, const Allocator& alloc = Allocator()

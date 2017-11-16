@@ -1,0 +1,28 @@
+1. Data member is const, reference or of class type that can't be default initialized
+2. Value can be modified through const object and const member functions.
+3. inline namespace is a namespace that is implicitly used in the declaration context
+   namespace a {
+   namespace b {
+      ...
+   }
+   using namespace b;
+}
+
+
+namespace a {
+   inline namespace b {
+      ...
+   }
+}
+
+4.
+ 1. Try to find non-template version that matches call perfectely
+ 2. Try to find template version that can be instantiated to match call
+ 3. Try to find non-template call that matches uniquely best through implicit conversion
+
+5.
+  vector<int> {2,3}; -> vector with 2 ints, value 2,3.
+  vector<int>(2,3); -> vector with 2 ints, value 3.
+
+First call matches vector(std::initializer_list<T>)
+Second call matches vector(size_t, int)

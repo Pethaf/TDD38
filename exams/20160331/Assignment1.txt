@@ -1,0 +1,35 @@
+#1 template <typename T>
+T max(T,T) { }
+     int i;
+double d;
+max(i,d);
+
+Template type arguments are not implicitly converted. Thus there is no way for the compiler to instantiate a function from int and double.
+max<double>(i,d);
+
+#2 Unnamed namespace is a namespace without a name, declaring such a namespace localizes the namespace to the enclosing file.
+
+#3 non-static, non-const, non-reference member data member declared as mutable -> member functions declared as const allowed to alter them, allowed to change them through const object.
+ lambda function declared as mutable -> lambda object allowed to change captured variables.
+
+#4 Non-explicit 1-parameter constructor,
+   class T
+   {
+     T(U) { ... } 
+   }
+  Type-conversion operator
+
+  class T
+  {
+    operator U() { ... } 
+  }
+
+#5 
+
+    class Foo
+    {
+      Foo(int i, double j, double k): var1(i),var2(j),var3(k) { }
+      Foo(int i): Foo(i,0.0,0.0) { } 
+    }
+
+  
